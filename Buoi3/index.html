@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Bài 1</h2>
+    <div class="form-send">
+      <h1>Try a free sample</h1>
+      <p>
+        Sign up to get a coupon you can redeem at your nearest Dancing Goat cafe
+        for a sample of the colombia Carlos Imbachi coffee. We'll also make sure
+        you don't miss out on news introducing the new coffees that we add to
+        our store regularly
+      </p>
+
+      <form action="send" method="post">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="">First name</label>
+            <input type="text" name="" id="" placeholder="John" />
+          </div>
+          <div class="form-group">
+            <label for="">Last name</label>
+            <input type="text" name="" id="" placeholder="Smith" />
+          </div>
+          <div class="form-group">
+            <label for="">Email address</label>
+            <input type="text" name="" id="" placeholder="john@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="">Address</label>
+            <input type="text" name="" id="" placeholder="Silk St" />
+          </div>
+          <div class="form-group">
+            <label for="">City</label>
+            <input type="text" name="" id="" placeholder="London" />
+          </div>
+          <div class="form-group">
+            <label for="">State (optional)</label>
+            <input type="text" name="" id="" />
+          </div>
+          <div class="form-group">
+            <label for="">Zip code</label>
+            <input type="text" name="" id="" placeholder="EC2Y8DS" />
+          </div>
+          <div class="form-group">
+            <label for="">Country</label>
+            <select name="" id="">
+              <option value="">United Kingdom</option>
+              <option value="">Việt Nam</option>
+              <option value="">USA</option>
+            </select>
+          </div>
+        </div>
+        <button class="submit" type="submit">SEND ME FREE COFFEE</button>
+      </form>
+    </div>
+
+    <hr />
+    <h2>Bài 2:</h2>
+
+    <div class="calculator">
+      <div class="display" id="display">0</div>
+      <div class="button">
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
+        <button onclick="append('+')">+</button>
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button onclick="append('-')">-</button>
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button onclick="append('*')">x</button>
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="append('0')">0</button>
+        <button onclick="calculator()">=</button>
+        <button onclick="append('/')">/</button>
+      </div>
+    </div>
+
+    <hr>
+    <h2>Bài 3</h2>
+    <div class="Sign-Up">
+        <form action="Sign-Up" method="post">
+            <div class="form-sign">
+                <label for="">Username</label>
+                <input type="text">
+            </div>
+            <div class="form-sign">
+                <label for="">Password</label>
+                <input type="password">
+            </div>
+            <div class="form-sign">
+                <label for="">City of</label>
+                <input type="text">
+            </div>
+            <div class="form-sign">
+                <label for="">Wen server</label>
+                <select name="" id="" >
+                    <option value="" disabled selected>-choose a server--</option>
+                    <option value="Binhthuan3101">Binhthuan3101</option>
+                </select>
+            </div>
+            <div class="form-sign">
+                <label for="">Please specify your role</label>
+                <label for="">
+                    <div class="standing">
+                        <div><input type="radio">Admin</div>
+                        <div><input type="radio" name="" id="">Engineer</div>
+                        <div><input type="radio" name="" id="">Manager</div>
+                        <div><input type="radio" name="" id="">Guest</div>
+                    </div>
+                </label>
+            </div>
+            <div class="form-sign">
+                <label for="">Single Sign-on to the Following</label>
+                <label for="">
+                    <div class="standing">
+                        <div><input type="checkbox" name="" id="">Mail</div>
+                        <div><input type="checkbox" name="" id="">Payroll</div>
+                        <div><input type="checkbox" name="" id="">Self-Service</div>
+                    </div>
+                </label>
+            </div>
+            <div class="button-sign">
+                <input type="submit" value="Login">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+
+    <hr>
+    <h2>Bài 4</h2>
+    <div class="form-contact">
+        <form action="contact" method="post">
+            <h1>Get in touch with us by filling  contact form below</h1>
+            <div class="contact-enter">
+                <div class="contact">
+                    <input type="text" placeholder="*Enter your full name">
+                </div>
+                <div class="contact">
+                    <input type="text" placeholder="*Enter your full name">
+                </div>
+                <div class="contact">
+                    <input type="text" placeholder="*Enter your full name">
+                </div>
+            </div>
+            <textarea name="" id="" placeholder="* Your messenger here"></textarea>
+            <div class="send">
+                <input type="submit" value="Send message">
+                <p>*Please fill all require form field, thanks!</p>
+            </div>
+        </form>
+    </div>
+    <script>
+      let display = document.getElementById("display");
+
+      function append(value) {
+        if (display.innerText === "0") {
+          display.innerText = value;
+        } else {
+          display.innerText += value;
+        }
+      }
+
+      function clearDisplay() {
+        display.innerText = "0";
+      }
+
+      function calculator() {
+        try {
+          display.innerText = eval(display.innerText);
+        } catch {
+          display.innerText = "Error";
+        }
+      }
+    </script>
+  </body>
+</html>

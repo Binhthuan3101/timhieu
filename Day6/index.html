@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .form {
+        max-width: 600px;
+        height: 400px;
+      }
+      form{
+        width: 100%;
+        height: 100%;
+        padding: 20px 50px;
+        background-color: rgb(47, 2, 54);
+        border-radius: 20px;
+        box-shadow:inset 0 0 15px rgba(0, 0, 0, 0.5);
+        
+      }
+      h1 {
+        text-align: center;
+        color: #fff;
+      }
+      .group-item {
+        width: 400px;
+        position: relative;
+        margin-bottom: 20px;
+      }
+      label {
+        position: absolute;
+        font-size: 1.2rem;
+        font-weight: 600;
+        position: absolute;
+        padding: 0px 5px;
+        top: 50%;
+        left: 12px;
+        border-radius: 10px;
+        transform: translate(0, -50%);
+        transition: transform 0.5s ease;
+        pointer-events: none;
+        background-color: #fff;
+      }
+      input {
+        width: 100%;
+        padding: 10px 15px;
+        border-radius: 20px;
+        border: 2px solid black;
+        outline: none;
+        &:focus + label,
+        &:not(:placeholder-shown) + label {
+          transform: translateY(-30px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <form action="" method="post">
+        <h1>Đăng ký</h1>
+        <div class="group-item">
+          <input
+            type="text"
+            name="Username"
+            id="Username"
+            placeholder="Username"
+          />
+          <label for="Username">Username</label>
+        </div>
+        <div class="group-item">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="password"
+          />
+          <label for="Password">Password</label>
+        </div>
+        <div class="group-item">
+          <input
+            type="password"
+            name="confirm"
+            id="confirm"
+            placeholder="confirm "
+          />
+          <label for="confirm">Confirm</label>
+        </div>
+        <div class="group-item">
+          <input type="email" name="email" id="email" placeholder="email" />
+          <label for="Username">Email</label>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

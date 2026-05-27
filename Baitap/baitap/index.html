@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>UI Config</title>
+
+<style>
+body{
+    background:#dcdcdc;
+    font-family:sans-serif;
+}
+
+.box{
+    width:700px;
+    margin:30px auto;
+    background:#eee;
+    padding:25px;
+    border-radius:20px;
+}
+
+/* TITLE */
+.title{
+    background:#ddd;
+    padding:8px 16px;
+    border-radius:20px;
+    display:inline-block;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+/* INPUT */
+input{ display:none; }
+
+/* BUTTON */
+.btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 20px;
+    border-radius:30px;
+    background:#cfd4de;
+    margin:5px;
+    cursor:pointer;
+}
+
+.btn::before{
+    content:"";
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    border:1px solid #888;
+}
+
+/* CHECKED */
+input:checked + .btn{
+    background:#f5e6b3;
+}
+
+input:checked + .btn::before{
+    background:#8b6b00;
+}
+
+/* COLOR riêng */
+#red:checked + .btn{ background:#f8caca;}
+#blue:checked + .btn{ background:#cfd8f6;}
+#green:checked + .btn{ background:#c8f2d3;}
+#vi:checked + .btn{ background:#bdf3cd;}
+
+/* checkbox vuông */
+.checkbox::before{ border-radius:5px; }
+
+/* ===== CONTENT ===== */
+.content p{
+    /* display:none; */
+    padding:10px;
+    border-radius:10px;
+    margin:6px 0;
+}
+
+/* THEME */
+#light:checked ~ .content .light{
+    display:block;
+    background:#fff;
+    color:#000;
+}
+#dark:checked ~ .content .dark{
+    display:block;
+    background:#000;
+    color:#fff;
+}
+
+/* COLOR */
+#red:checked ~ .content .red{
+    display:block;
+    background:#ffd6d6;
+    color:red;
+}
+#blue:checked ~ .content .blue{
+    display:block;
+    background:#d6e4ff;
+    color:blue;
+}
+#green:checked ~ .content .green{
+    display:block;
+    background:#d6ffd6;
+    color:green;
+}
+
+/* LANGUAGE */
+#vi:checked ~ .content .vi{
+    font-weight:bold;
+}
+#en:checked ~ .content .en{
+    font-weight:bold;
+}
+
+/* OPTIONS */
+#opt1:checked ~ .content .opt1{
+    background:#9d1f1f;
+}
+#opt2:checked ~ .content .opt2{
+    background:#e0f7fa;
+}
+#opt3:checked ~ .content .opt3{
+    background:#fff3cd;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<!-- THEME -->
+<div class="title">CHỌN GIAO DIỆN</div><br>
+
+<input type="radio" name="theme" id="light" >
+<label for="light" class="btn">Light</label>
+
+<input type="radio" name="theme" id="dark">
+<label for="dark" class="btn">Dark</label>
+
+<br><br>
+
+<!-- COLOR -->
+<div class="title">CHỌN MÀU CHỦ ĐẠO</div><br>
+
+<input type="radio" name="color" id="red" checked>
+<label for="red" class="btn">Red</label>
+
+<input type="radio" name="color" id="blue">
+<label for="blue" class="btn">Blue</label>
+
+<input type="radio" name="color" id="green">
+<label for="green" class="btn">Green</label>
+
+<br><br>
+
+<!-- LANGUAGE -->
+<div class="title">CHỌN NGÔN NGỮ</div><br>
+
+<input type="radio" name="lang" id="vi" checked>
+<label for="vi" class="btn">VI</label>
+
+<input type="radio" name="lang" id="en">
+<label for="en" class="btn">EN</label>
+
+<br><br>
+
+<!-- OPTIONS -->
+<div class="title">TÙY CHỌN</div><br>
+
+<input type="checkbox" id="opt1">
+<label for="opt1" class="btn checkbox">Mô tả nâng cao</label>
+
+<input type="checkbox" id="opt2">
+<label for="opt2" class="btn checkbox">Eco</label>
+
+<input type="checkbox" id="opt3">
+<label for="opt3" class="btn checkbox">Cảnh báo</label>
+
+<hr>
+
+<!-- HIỂN THỊ -->
+<div class="content">
+
+<p class="light">Theme Light: Giao diện sáng chữ đen</p>
+<p class="dark">Theme Dark: Giao diện tối chữ sáng</p>
+
+<p class="red">Màu Red: được nhấn mạnh</p>
+<p class="blue">Màu Blue: được nhấn mạnh</p>
+<p class="green">Màu Green: được nhấn mạnh</p>
+
+<p class="vi">[VI] Xin chào bạn!</p>
+<p class="en">[EN] Hello world!</p>
+
+<p class="opt1">Mô tả nâng cao đang bật</p>
+<p class="opt2">Chế độ Eco đang bật</p>
+<p class="opt3">Cảnh báo quan trọng</p>
+
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        margin: 30px;
+      }
+      .item {
+        display: inline-block;
+        margin-right: 35px;
+        margin-bottom: 35px;
+      }
+      .square {
+        width: 150px;
+        height: 150px;
+        border: 5px solid red;
+      }
+
+      .rectangle {
+        width: 200px;
+        height: 100px;
+        border: 4px solid blue;
+      }
+
+      .triangle-up {
+        border-width: 0 50px 100px 50px;
+        border-color: transparent transparent green transparent;
+        border-style: solid;
+        width: 0;
+        height: 0;
+      }
+
+      .triangle-down {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 100px 50px 0 50px;
+        border-color: orange transparent transparent transparent;
+      }
+
+      .triangle-left {
+        width: 0;
+        height: 0;
+        border-width: 50px 100px 50px 0;
+        border-style: solid;
+        border-color: transparent purple transparent transparent;
+      }
+
+      .triangle-right {
+        width: 0;
+        height: 0;
+        border-width: 50px 0 50px 100px;
+        border-style: solid;
+        border-color: transparent transparent transparent rgb(60, 40, 2);
+      }
+
+      /* Hình thang */
+      .trapezoid {
+        border-width: 0 30px 70px 30px;
+        border-style: solid;
+        border-color: transparent transparent rgb(54, 155, 93) transparent;
+        width: 150px;
+      }
+
+      /* Hình tam giác rộng */
+      .triangle-wide {
+        width: 0;
+        border-width: 0 70px 40px 70px;
+        border-style: solid;
+        border-color: transparent transparent #333 transparent;
+      }
+
+      /* Tam giác nhọn */
+      .triangle-sharp {
+        width: 0;
+        border-width: 0 30px 100px 30px;
+        border-style: solid;
+        border-color: transparent transparent red transparent;
+      }
+
+      /* Tam giác cân */
+      .triangle-equal {
+        width: 0;
+        border-width: 0 50px 70px 50px;
+        border-style: solid;
+        border-color: transparent transparent #712302 transparent;
+      }
+      .arrow-right {
+        width: 0;
+        border-width: 50px 0 50px 70px;
+        border-style: solid;
+        border-color: transparent transparent transparent #024871;
+      }
+      .arrow-left {
+        width: 0;
+        border-width: 50px 70px 50px 0;
+        border-style: solid;
+        border-color: transparent purple transparent transparent;
+      }
+      .ribbon {
+        width: 150px;
+        border-right: 40px solid transparent;
+        border-top: 40px solid red;
+        border-bottom: 40px solid red;
+      }
+      /* ===============F8=================== */
+      .f8 {
+        display: inline-block;
+
+        width: 500px;
+      }
+      .f {
+        display: inline-block;
+        position: relative;
+        height: 250px;
+        width: 150px;
+      }
+      .top {
+        position: absolute;
+        top: 0;
+        width: 150px;
+        border: 40px solid red;
+        border-bottom: none;
+      }
+      .col {
+        height: 100%;
+        width: 0;
+        border: 40px solid red;
+        border-right: none;
+      }
+      .mid {
+        top: 90px;
+        position: absolute;
+        width: 150px;
+        border: 40px solid red;
+        border-bottom: none;
+      }
+      .eight {
+        display: inline-block;
+        width: 150px;
+        height: 250px;
+        margin-left: 40px;
+      }
+      .box{
+        width: 100%;
+        height: calc(100% / 2);
+        border: 40px solid red;
+      }
+
+      .box1{
+        border-bottom: 20px solid red;
+      }
+      .box2{
+        border-top: 20px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">
+        <div class="square"></div>
+        <p>1. Hình vuông</p>
+      </div>
+      <div class="item">
+        <div class="rectangle"></div>
+        <p>2. Hình chữ nhật</p>
+      </div>
+      <div class="item">
+        <div class="triangle-up"></div>
+        <p>3. Tam giác lên</p>
+      </div>
+      <div class="item">
+        <div class="triangle-down"></div>
+        <p>4. Tam giác xuống</p>
+      </div>
+      <div class="item">
+        <div class="triangle-left"></div>
+        <p>5. Tam giác trái</p>
+      </div>
+      <div class="item">
+        <div class="triangle-right"></div>
+        <p>6. Tam giác phải</p>
+      </div>
+      <div class="item">
+        <div class="trapezoid"></div>
+        <p>7. Hình thang</p>
+      </div>
+      <div class="item">
+        <div class="triangle-wide"></div>
+        <p>8. Hình tam giác rộng</p>
+      </div>
+      <div class="item">
+        <div class="triangle-sharp"></div>
+        <p>9. Hình tam giác nhọn</p>
+      </div>
+      <div class="item">
+        <div class="triangle-equal"></div>
+        <p>10. Hình tam giác cân</p>
+      </div>
+      <div class="item">
+        <div class="arrow-right"></div>
+        <p>11. Mũi tên phải</p>
+      </div>
+      <div class="item">
+        <div class="arrow-left"></div>
+        <p>12. Mũi tên trái</p>
+      </div>
+      <div class="item">
+        <div class="ribbon"></div>
+        <p>13. ribbon/lá cờ</p>
+      </div>
+
+      <div class="f8">
+        <div class="f">
+          <div class="top"></div>
+          <div class="col"></div>
+          <div class="mid"></div>
+        </div>
+
+        <div class="eight">
+          <div class="box box1"></div>
+          <div class="box box2"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

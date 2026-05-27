@@ -1,0 +1,14 @@
+.parent{
+    .box-3 ~ .box{
+        color: green;
+    }
+    li:nth-child(even){
+        color: red;
+    }
+    li:nth-child(5){
+        color: violet;
+    }
+    .box-3 ul li ul {
+        background-color: gray;
+    }
+}

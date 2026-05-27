@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .checkbox{
+            position: relative;
+            display: inline-block;
+        }
+        .checkbox::before{
+            content: "";
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border: 2px solid rgb(15, 148, 117);
+        }
+        .checkbox::after{
+            content: "";
+            position: absolute;
+            width: 7px;
+            height: 4px;
+            border: 3px solid;
+            z-index: 1;
+            left: 4px;
+            bottom: 13px;
+            rotate: -45deg;
+            border-color:  transparent transparent #fff   #fff;
+        }
+        #checkbox:checked ~ .checkbox::before{
+            background-color: rgb(15, 148, 117);
+        }
+        /* Khung tròn bên ngoài của Radio */
+.radio {
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgb(15, 148, 117);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Chấm tròn bên trong (Mặc định ẩn bằng opacity: 0) */
+.radio::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(15, 148, 117);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease; /* Hiệu ứng hiện mượt mà */
+}
+
+/* Hiện chấm tròn bên trong khi Radio được tích chọn */
+#radio:checked ~ .radio::after {
+    opacity: 1;
+}
+
+        /* Khung nền của switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Nút tròn bên trong switch */
+.switch::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: white;
+    top: -2px;
+    left: 0;
+    transition: right 0.3s linear;
+}
+
+/* Đổi màu nền khi switch được bật */
+#switch:checked ~ .switch {
+    background-color: rgb(15, 148, 117, 0.3);
+}
+
+/* Dịch chuyển nút tròn sang phải khi bật */
+#switch:checked ~ .switch::after {
+    transform: translateX(20px);
+    background-color: rgb(15, 148, 117);
+}
+
+    </style>
+    <input type="checkbox" name="checkbox" id="checkbox" hidden>
+    <label for="checkbox" class="checkbox"></label>
+    <input type="radio" name="radio" id="radio" hidden>
+    <label for="radio" class="radio"></label>
+    <input type="checkbox" name="switch" id="switch" hidden>
+    <label for="switch" class="switch"></label >
+</body>
+</html>
